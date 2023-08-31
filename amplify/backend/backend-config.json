@@ -1,0 +1,45 @@
+{
+  "auth": {
+    "samlazure08007f02": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_samlazure08007f02_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazure08007f02"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazure08007f02_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazure08007f02"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazure08007f02_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazure08007f02"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazure08007f02_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazure08007f02"
+        }
+      ]
+    }
+  }
+}

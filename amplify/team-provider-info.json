@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-samlazure-dev-125529-authRole",
+      "UnauthRoleArn": "arn:aws:iam::013227809374:role/amplify-samlazure-dev-125529-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::013227809374:role/amplify-samlazure-dev-125529-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-samlazure-dev-125529-deployment",
+      "UnauthRoleName": "amplify-samlazure-dev-125529-unauthRole",
+      "StackName": "amplify-samlazure-dev-125529",
+      "StackId": "arn:aws:cloudformation:us-west-2:013227809374:stack/amplify-samlazure-dev-125529/caf38fa0-4766-11ee-a843-06f8f77882d1",
+      "AmplifyAppId": "d25zt6i7niqdny"
+    },
+    "categories": {
+      "auth": {
+        "samlazure08007f02": {
+          "userPoolId": "us-west-2_QIK1IZFdh",
+          "userPoolName": "tea-mimic",
+          "webClientId": "s3n7aqptqag0rrh7k1epf9msb",
+          "nativeClientId": "s3n7aqptqag0rrh7k1epf9msb"
+        }
+      }
+    }
+  }
+}
