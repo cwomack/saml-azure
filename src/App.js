@@ -5,10 +5,10 @@ import awsExports from './aws-exports';
 
 Amplify.configure({
   Auth: {
-    // // (required) only for Federated Authentication - Amazon Cognito Identity Pool ID
-    // identityPoolId: 'XX-XXXX-X:XXXXXXXX-XXXX-1234-abcd-1234567890ab',
+    // (required) only for Federated Authentication - Amazon Cognito Identity Pool ID
+    identityPoolId: 'us-west-2:5f5a6b06-3499-4822-bc08-4416fb55dd64',
 
-    // (required)- Amazon Cognito Region
+    // (required)- Amazon Cognito Regionamplify 
     region: 'us-west-2',
 
     // // (optional) - Amazon Cognito Federated Identity Pool Region
@@ -61,7 +61,7 @@ Amplify.configure({
         'aws.cognito.signin.user.admin'
       ],
       redirectSignIn: 'http://localhost:3000/',
-      redirectSignOut: 'https://login.microsoftonline.com/0a417cd4-e414-4bac-9676-8622552be0a6/saml2',
+      redirectSignOut: 'http://localhost:3000/',
       clientId: 's3n7aqptqag0rrh7k1epf9msb', // User Pool client Id or Client ID from SAML provider
       responseType: 'token' // or 'token', note that REFRESH token will only be generated when the responseType is code
     }
