@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'; // Import the necessary dependencies
-import { Amplify, Auth } from 'aws-amplify'; // Import Amplify components
+import { Amplify, Auth, Storage } from 'aws-amplify'; // Import Amplify components
+import { FileUploader } from '@aws-amplify/ui-react'; 
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
-Amplify.configure({
+Amplify.configure({...awsExports,
   Auth: {
     // (required) only for Federated Authentication - Amazon Cognito Identity Pool ID
     identityPoolId: 'us-west-2:5f5a6b06-3499-4822-bc08-4416fb55dd64',
@@ -65,20 +66,107 @@ Amplify.configure({
       clientId: 's3n7aqptqag0rrh7k1epf9msb', // User Pool client Id or Client ID from SAML provider
       responseType: 'token' // or 'token', note that REFRESH token will only be generated when the responseType is code
     }
+  },
+  Storage: {
+    AWSS3: {
+      bucket: 'samlazuredf0e31194ac548188b25b0059eb825bc', // (required) -  Amazon S3 bucket name
+      region: 'us-east-2' // (optional) -  Amazon service region
+    }
   }
 });
 
 
 
+// function App() {
+//   const [user, setUser] = useState(null); // State to hold user data
+//   const [loading, setLoading] = useState(true); // State to track loading state
+
+//   useEffect(() => {
+//     Auth.currentAuthenticatedUser()
+//       .then(userData => setUser(userData)) // Set user data if authenticated
+//       .catch(() => setUser(null))
+//       .finally(() => setLoading(false)); // Set loading state when done fetching
+//   }, []);
+
+//   return (
+//     <div className="App">
+//       <h1>Tea Mimic</h1>
+//       {loading ? (
+//         <p>Loading...</p>
+//       ) : (
+//         <>
+//           {user ? ( // If user is authenticated, show user info and sign out button
+//             <div>
+//               <p>Welcome, {user.attributes.email}</p>
+//               <button onClick={() => Auth.signOut()}>Sign Out</button>
+//             </div>
+//           ) : ( // If user is not authenticated, show sign in button
+//             <button onClick={() => Auth.federatedSignIn({ customProvider: "azure-tea-mimic" })}>Sign In</button>
+//           )}
+//         </>
+//       )}
+//     </div>
+//   );
+// }
+
+
+// function App() {
+//   const [user, setUser] = useState(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     Auth.currentAuthenticatedUser()
+//       .then(userData => setUser(userData))
+//       .catch(() => setUser(null))
+//       .finally(() => setLoading(false));
+//   }, []);
+
+//   // Function to handle file upload
+//   const handleFileUpload = async () => {
+//     try {
+//       const file = new Blob(['Hello, world!'], { type: 'text/plain' });
+//       await Storage.put('myFile.txt', file, {
+//         contentType: 'text/plain'
+//       });
+//       console.log('File uploaded successfully');
+//     } catch (error) {
+//       console.error('Error uploading file:', error);
+//     }
+//   };
+
+//   return (
+//     <div className="App">
+//       <h1>Tea Mimic</h1>
+//       {loading ? (
+//         <p>Loading...</p>
+//       ) : (
+//         <>
+//           {user ? (
+//             <div>
+//               <p>Welcome, {user.attributes.email}</p>
+//               <button onClick={() => Auth.signOut()}>Sign Out</button>
+//               <button onClick={handleFileUpload}>Upload File</button> {/* Add the button to trigger file upload */}
+//             </div>
+//           ) : (
+//             <button onClick={() => Auth.federatedSignIn({ customProvider: "azure-tea-mimic" })}>Sign In</button>
+//           )}
+//         </>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default App;
+
 function App() {
-  const [user, setUser] = useState(null); // State to hold user data
-  const [loading, setLoading] = useState(true); // State to track loading state
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Auth.currentAuthenticatedUser()
-      .then(userData => setUser(userData)) // Set user data if authenticated
+      .then(userData => setUser(userData))
       .catch(() => setUser(null))
-      .finally(() => setLoading(false)); // Set loading state when done fetching
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -88,12 +176,17 @@ function App() {
         <p>Loading...</p>
       ) : (
         <>
-          {user ? ( // If user is authenticated, show user info and sign out button
+          {user ? (
             <div>
               <p>Welcome, {user.attributes.email}</p>
               <button onClick={() => Auth.signOut()}>Sign Out</button>
+              {/* Replace the previous button with the FileUploader component */}
+              <FileUploader
+                acceptedFileTypes={['.png']}
+                accessLevel="public"
+              />
             </div>
-          ) : ( // If user is not authenticated, show sign in button
+          ) : (
             <button onClick={() => Auth.federatedSignIn({ customProvider: "azure-tea-mimic" })}>Sign In</button>
           )}
         </>
@@ -102,4 +195,4 @@ function App() {
   );
 }
 
-export default App; // Export the App component
+export default App;
