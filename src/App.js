@@ -69,12 +69,12 @@ Amplify.configure({...awsExports,
       responseType: 'code' // 'code' or 'token', note that REFRESH token will only be generated when the responseType is code
     }
   },
-  Storage: {
-    AWSS3: {
-      bucket: 'samlazuredf0e31194ac548188b25b0059eb825bc', // (required) -  Amazon S3 bucket name
-      region: 'us-east-2' // (optional) -  Amazon service region
-    }
-  }
+  // Storage: {
+  //   AWSS3: {
+  //     bucket: 'samlazuredf0e31194ac548188b25b0059eb825bc', // (required) -  Amazon S3 bucket name
+  //     region: 'us-east-2' // (optional) -  Amazon service region
+  //   }
+  // }
 });
 
 
