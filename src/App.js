@@ -8,6 +8,8 @@ Amplify.configure({...awsExports,
   Auth: {
     // (required) only for Federated Authentication - Amazon Cognito Identity Pool ID
     identityPoolId: 'us-west-2:5f5a6b06-3499-4822-bc08-4416fb55dd64',
+    // identityPoolId: 'us-west-2:178e63e6-61d8-4a48-a91e-1ff0f06e5118',
+
 
     // (required)- Amazon Cognito Regionamplify 
     region: 'us-west-2',
@@ -64,7 +66,7 @@ Amplify.configure({...awsExports,
       redirectSignIn: 'http://localhost:3000/',
       redirectSignOut: 'http://localhost:3000/',
       clientId: 's3n7aqptqag0rrh7k1epf9msb', // User Pool client Id or Client ID from SAML provider
-      responseType: 'token' // or 'token', note that REFRESH token will only be generated when the responseType is code
+      responseType: 'code' // 'code' or 'token', note that REFRESH token will only be generated when the responseType is code
     }
   },
   Storage: {

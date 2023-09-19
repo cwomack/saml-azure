@@ -1,3 +1,102 @@
 {
-  "auth": {}
+  "auth": {
+    "samlazuree0329e25": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_samlazuree0329e25_allowUnauthenticatedIdentities": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_authRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_authRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_identityPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_identityPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_unauthRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_unauthRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    },
+    "AMPLIFY_auth_samlazuree0329e25_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "samlazuree0329e25"
+        }
+      ]
+    }
+  },
+  "storage": {}
 }

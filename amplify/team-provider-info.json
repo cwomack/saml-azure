@@ -10,6 +10,23 @@
       "StackName": "amplify-samlazure-dev-125529",
       "StackId": "arn:aws:cloudformation:us-west-2:013227809374:stack/amplify-samlazure-dev-125529/caf38fa0-4766-11ee-a843-06f8f77882d1",
       "AmplifyAppId": "d25zt6i7niqdny"
+    },
+    "categories": {
+      "auth": {
+        "samlazuree0329e25": {
+          "userPoolId": "us-west-2_QIK1IZFdh",
+          "userPoolName": "tea-mimic",
+          "webClientId": "s3n7aqptqag0rrh7k1epf9msb",
+          "nativeClientId": "s3n7aqptqag0rrh7k1epf9msb",
+          "identityPoolId": "us-west-2:5f5a6b06-3499-4822-bc08-4416fb55dd64",
+          "identityPoolName": "tea-identity-pool",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::013227809374:role/service-role/tea-identity-pool-auth",
+          "authRoleName": "service-role/tea-identity-pool-auth",
+          "unauthRoleArn": "arn:aws:iam::013227809374:role/service-role/tea-identity-pool-UNauth",
+          "unauthRoleName": "service-role/tea-identity-pool-UNauth"
+        }
+      }
     }
   }
 }
