@@ -1,0 +1,11 @@
+{
+  "resourceName": "s306c34e17",
+  "policyUUID": "06c34e17",
+  "bucketName": "samlazure211066f87fd24954bbc788a453bc3cd1",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE"
+  ],
+  "groupAccess": {}
+}
