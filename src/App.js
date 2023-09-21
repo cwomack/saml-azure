@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'; // Import the necessary dependencies
-import { Amplify, Auth, Storage } from 'aws-amplify'; // Import Amplify components
+import { Amplify, Auth } from 'aws-amplify'; // Import Amplify components
 import { FileUploader } from '@aws-amplify/ui-react'; 
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
