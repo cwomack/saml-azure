@@ -56,6 +56,7 @@ function App() {
       .then(userData => setUser(userData))
       .catch(() => setUser(null))
       .finally(() => setLoading(false));
+      console.log(user);
   }, []);
 
   return (
@@ -73,6 +74,8 @@ function App() {
               <FileUploader
                 acceptedFileTypes={['.png']}
                 accessLevel="public"
+                // Need to valiate the path approach with the UI connected component
+                // path?="uploads/"
               />
             </div>
           ) : (
