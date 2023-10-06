@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'; // Import the necessary dependencies
 import { Amplify, Auth } from 'aws-amplify'; // Import Amplify components
-import { FileUploader } from '@aws-amplify/ui-react'; 
+import { StorageManager } from '@aws-amplify/ui-react-storage';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
@@ -45,18 +45,24 @@ Amplify.configure({...awsExports,
   }
 });
 
-
-
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  // const [pathTest, setCognitoId] = useState(''); // sub test
+  const [pathTest, setPathTest] = useState(''); // Path test
 
   useEffect(() => {
     Auth.currentAuthenticatedUser()
-      .then(userData => setUser(userData))
+    .then(userData => {
+      setUser(userData);
+      // Set the pathTest when user data is available
+      setPathTest(userData.attributes.email); // Assuming email is the desired path
+    })
       .catch(() => setUser(null))
       .finally(() => setLoading(false));
       console.log(user);
+      console.log(pathTest);
+      console.log(typeof(pathTest));
   }, []);
 
   return (
@@ -70,12 +76,16 @@ function App() {
             <div>
               <p>Welcome, {user.attributes.email}</p>
               <button onClick={() => Auth.signOut()}>Sign Out</button>
-              {/* Replace the previous button with the FileUploader component */}
-              <FileUploader
+              {/* Pass pathTest to the path prop */}
+              <StorageManager
                 acceptedFileTypes={['.png']}
-                accessLevel="public"
-                // Need to valiate the path approach with the UI connected component
-                // path?="uploads/"
+                accessLevel="public" // DO NOT MESS WITH THIS, defaults to public folder if you do. 
+                // path={pathTest}
+                
+                // path={`/test/${pathTest}/`} // Yields: public/ > / > test/ > email > FileName
+                // path={`test/${pathTest}/`} // Yields: public/ > test/ > email > FileName
+                path={`VendorA/District1/${pathTest}/`} //
+
               />
             </div>
           ) : (
