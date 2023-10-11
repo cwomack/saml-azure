@@ -45,6 +45,7 @@ Amplify.configure({...awsExports,
   }
 });
 
+
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
