@@ -5,6 +5,7 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
 // final configuration (in v5)
+// Scoped Congig for Auth and Storage
 
 Amplify.configure({...awsExports,
   Auth: {
