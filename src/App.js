@@ -4,7 +4,7 @@ import { StorageManager } from '@aws-amplify/ui-react-storage';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
-// final configuration (in v5)
+// FINAL configuration (in v5)
 // Scoped Congig for Auth and Storage
 
 Amplify.configure({...awsExports,
