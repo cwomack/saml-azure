@@ -37,7 +37,7 @@ Amplify.configure({...awsExports,
       redirectSignIn: 'http://localhost:3000/',
       redirectSignOut: 'http://localhost:3000/',
       clientId: 's3n7aqptqag0rrh7k1epf9msb', // User Pool client Id or Client ID from SAML provider
-      responseType: 'code' // 'code' or 'token', note that REFRESH token will only be generated when the responseType is code
+      responseType: 'code' // 'code' (do not use implicit token flow as it is less secure)
     }
   },
   Storage: {
