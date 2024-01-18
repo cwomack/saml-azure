@@ -4,7 +4,7 @@ import { StorageManager } from '@aws-amplify/ui-react-storage';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
-// FINAL configuration (in v5)
+// FINAL working configuration (in v5)
 
 Amplify.configure({...awsExports,
   Auth: {
