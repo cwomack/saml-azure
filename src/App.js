@@ -5,6 +5,7 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
 // FINAL working configuration (in v5) test
+// still working on v5 - 03/10/2022
 
 Amplify.configure({...awsExports,
   Auth: {
