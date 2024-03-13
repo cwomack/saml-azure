@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Tea Mimic</h1>
+      <h1>SAML Federation via Azure/Entra ID - v5</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
