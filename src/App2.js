@@ -1,3 +1,5 @@
+// commit before making the v6 migration for TEA side
+
 import { useEffect, useState } from 'react'; // Import the necessary dependencies
 import { Amplify } from 'aws-amplify'; // Import Amplify components
 import {
