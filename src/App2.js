@@ -11,8 +11,6 @@ signInWithRedirect
 from 'aws-amplify/auth'
 import '@aws-amplify/ui-react/styles.css';
 import TEALogo from "./TEALogo.png"; // Import TEA logo
-//import awsExports from './aws-exports';
-//import { FileUploader } from '@aws-amplify/ui-react';
 import { StorageManager } from '@aws-amplify/ui-react-storage';
  
 Amplify.configure({

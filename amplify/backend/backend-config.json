@@ -96,13 +96,30 @@
           "resourceName": "samlazuree0329e25"
         }
       ]
+    },
+    "AMPLIFY_storage_samlazure9c96e04d_bucketName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "samlazure9c96e04d"
+        }
+      ]
+    },
+    "AMPLIFY_storage_samlazure9c96e04d_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "samlazure9c96e04d"
+        }
+      ]
     }
   },
   "storage": {
-    "s306c34e17": {
+    "samlazure9c96e04d": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
-      "service": "S3"
+      "service": "S3",
+      "serviceType": "imported"
     }
   }
 }

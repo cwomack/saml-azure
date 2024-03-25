@@ -26,6 +26,12 @@
           "unauthRoleArn": "arn:aws:iam::013227809374:role/service-role/tea-identity-pool-UNauth",
           "unauthRoleName": "service-role/tea-identity-pool-UNauth"
         }
+      },
+      "storage": {
+        "samlazure9c96e04d": {
+          "bucketName": "samlazuredf0e31194ac548188b25b0059eb825bc",
+          "region": "us-west-2"
+        }
       }
     }
   }
