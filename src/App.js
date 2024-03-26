@@ -264,35 +264,5 @@ function App() {
 
 export default App;
 
-// ----------------------------- End of TEA migation code -----------------------------
 
-    // <div className="App">
-    //   <h1>SAML Federation via Azure/Entra ID - v5</h1>
-    //   {loading ? (
-    //     <p>Loading...</p>
-    //   ) : (
-    //     <>
-    //       {user ? (
-    //         <div>
-    //           <p>Welcome, {user.attributes.email}</p>
-    //           <button onClick={() => Auth.signOut()}>Sign Out</button>
-    //           {/* Pass pathTest to the path prop */}
-    //           <StorageManager
-    //             acceptedFileTypes={['.png']}
-    //             accessLevel="public" // DO NOT MESS WITH THIS, defaults to public folder if you do. 
-    //             // path={pathTest}
-                
-    //             // path={`/test/${pathTest}/`} // Yields: public/ > / > test/ > email > FileName
-    //             // path={`test/${pathTest}/`} // Yields: public/ > test/ > email > FileName
-    //             path={`VendorA/District1/${pathTest}/`} //
-
-    //           />
-    //         </div>
-    //       ) : (
-    //         <button onClick={() => Auth.federatedSignIn({ customProvider: "azure-tea-mimic" })}>Sign In</button>
-    //       )}
-    //     </>
-    //   )}
-    // </div>
-
-
+// ----------------------------- End of TEA migation code --------------------------------
