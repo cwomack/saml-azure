@@ -111,7 +111,8 @@
 import { useEffect, useState } from 'react'; // Import the necessary dependencies
 import { Amplify } from 'aws-amplify'; // Import Amplify components
 import { Hub } from 'aws-amplify/utils';
-import { StorageManager } from '@aws-amplify/ui-react-storage';
+import { uploadData } from 'aws-amplify/storage';
+// import { StorageManager } from '@aws-amplify/ui-react-storage';
 import '@aws-amplify/ui-react/styles.css';
 import amplifyconfig from './amplifyconfiguration.json';
 
@@ -161,6 +162,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [userAttributes, setUserAttributes] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
   // const [pathTest, setCognitoId] = useState(''); // sub test
   const [pathTest, setPathTest] = useState(''); // Path test
 
@@ -189,6 +191,26 @@ function App() {
       }
     });
   }
+
+  const onFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      setSelectedFile(event.target.files[0]);
+      console.log("Selected File: ", event.target.files[0]);
+    }
+  };
+
+  const uploadFile = async (file: File) => {
+    console.log("i am called")
+    try {
+      const result = await uploadData({
+        key: file.name,
+        data: file
+      }).result;
+      console.log("Upload Succeeded: ", result.key);
+    } catch (e) {
+      console.error("Failed upload: ", e);
+    }
+  };
 
   useEffect(() => {
     const config = Amplify.getConfig();
@@ -240,13 +262,22 @@ function App() {
           {user ? (
             <div>
               <p>Welcome, {userAttributes?.email}</p>
- 
+
+        <div>
+        <input type="file" onChange={onFileChange} accept='.csv' />
+        <button onClick={() => selectedFile && uploadFile(selectedFile)}>
+          Upload
+        </button>
+        </div>
+
+
+{/*  
               <StorageManager
-                acceptedFileTypes={['.jpg']}
+                acceptedFileTypes={['.csv']}
                 accessLevel="guest"
                 maxFileCount={15}
                 isResumable
-                />  
+                />   */}
               <p></p>
               <p>Note:</p>
               <p>This pilot program for data submission has passed TEA’s cybersecurity standards. We will reach out if we have not received your submission or if we notice any errors/omissions. Submitted data will be stored in a secure S3 environment and only be accessible to those who have gone through the appropriate server and database access request process. If you notice any omissions or discrepancies with data after submission, please re-submit.</p>
@@ -268,3 +299,5 @@ export default App;
 // ----------------------------- End of TEA migation code --------------------------------
 
 // ----------------------------- Test with Lambda driven data validation ---------------------------
+
+

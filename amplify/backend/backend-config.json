@@ -8,6 +8,14 @@
       "serviceType": "imported"
     }
   },
+  "function": {
+    "samlazure3035b8b7": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "parameters": {
     "AMPLIFY_auth_samlazuree0329e25_allowUnauthenticatedIdentities": {
       "usedBy": [

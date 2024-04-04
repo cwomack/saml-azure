@@ -32,6 +32,9 @@
           "bucketName": "samlazuredf0e31194ac548188b25b0059eb825bc",
           "region": "us-west-2"
         }
+      },
+      "function": {
+        "samlazure3035b8b7": {}
       }
     }
   }
