@@ -254,7 +254,9 @@ function App() {
 
   return (
 <div className="App">
-      <h1>AWS Datalake File Uploader</h1>
+      <h1>AWS Datalake File Uploader - Before Data Validation Tests</h1>
+      <h2>Migration from v5 to v6 = Complete</h2>
+      <h2>Swapping out of the Storage Manager Connected Component for the v6 Storage API's = Complete</h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -269,15 +271,6 @@ function App() {
           Upload
         </button>
         </div>
-
-
-{/*  
-              <StorageManager
-                acceptedFileTypes={['.csv']}
-                accessLevel="guest"
-                maxFileCount={15}
-                isResumable
-                />   */}
               <p></p>
               <p>Note:</p>
               <p>This pilot program for data submission has passed TEA’s cybersecurity standards. We will reach out if we have not received your submission or if we notice any errors/omissions. Submitted data will be stored in a secure S3 environment and only be accessible to those who have gone through the appropriate server and database access request process. If you notice any omissions or discrepancies with data after submission, please re-submit.</p>
@@ -294,10 +287,3 @@ function App() {
 }
 
 export default App;
-
-
-// ----------------------------- End of TEA migation code --------------------------------
-
-// ----------------------------- Test with Lambda driven data validation ---------------------------
-
-
