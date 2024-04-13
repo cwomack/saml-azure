@@ -253,6 +253,7 @@ function App() {
   }, []);
 
   return (
+    
 <div className="App">
       <h1>AWS Datalake File Uploader - Before Data Validation Tests</h1>
       <h2>Migration from v5 to v6 = Complete</h2>
