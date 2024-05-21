@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'; // Import the necessary dependencie
 import { Amplify } from 'aws-amplify'; // Import Amplify components
 import { Hub } from 'aws-amplify/utils';
 import { uploadData } from 'aws-amplify/storage';
-// import { StorageManager } from '@aws-amplify/ui-react-storage';
 import '@aws-amplify/ui-react/styles.css';
 import amplifyconfig from './amplifyconfiguration.json';
 
@@ -56,7 +55,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [userAttributes, setUserAttributes] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
-  // const [pathTest, setCognitoId] = useState(''); // sub test
   const [pathTest, setPathTest] = useState(''); // Path test
 
   const getAuthenticatedUser = async () => {
