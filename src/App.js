@@ -1,6 +1,5 @@
 // ----------------------------- Imports -----------------------------
 
-
 import { useEffect, useState } from 'react'; // Import the necessary dependencies
 import { Amplify } from 'aws-amplify'; // Import Amplify components
 import { Hub } from 'aws-amplify/utils';
@@ -41,7 +40,7 @@ Amplify.configure({...amplifyconfig,
   },
   Storage: {
     AWSS3: {
-      bucket: 'samlazuredf0e31194ac548188b25b0059eb825bc', // (required) -  Amazon S3 bucket name
+      bucket: 'samlazuredf0e31194ac548188b25b0059eb825bc', 
       region: 'us-west-2' // (optional) -  Amazon service region
     }
   }
@@ -49,13 +48,12 @@ Amplify.configure({...amplifyconfig,
 
 // ----------------------------- App Code ------------------------------
 
-
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [userAttributes, setUserAttributes] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
-  const [pathTest, setPathTest] = useState(''); // Path test
+  const [pathTest, setPathTest] = useState('');
 
   const getAuthenticatedUser = async () => {
     const {
@@ -67,7 +65,6 @@ function App() {
       tokens: session
     } = await fetchAuthSession();
   
-    // Note that session will no longer contain refreshToken and clockDrift
     return {
       username,
       session,
@@ -112,7 +109,7 @@ function App() {
         const user = await getCurrentUser();
         const session = await fetchAuthSession();
         setUser(user);
-        setPathTest(user.username); // Adjust according to your data structure
+        setPathTest(user.username);
         setLoading(false);
       } catch (error) {
         console.error('Authentication error:', error);
@@ -128,7 +125,7 @@ function App() {
   
     const unsubscribe = Hub.listen('auth', listener);
   
-    getAuthenticatedUser(); // Initial check for the user's sign-in status
+    getAuthenticatedUser();
 
     async function handleFetchUserAttributes() {
       try {
@@ -140,7 +137,7 @@ function App() {
 
     handleFetchUserAttributes();
   
-    return () => unsubscribe(); // Unsubscribe when component unmounts
+    return () => unsubscribe();
   }, []);
 
   return (
